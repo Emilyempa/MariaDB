@@ -1,0 +1,24 @@
+{
+  "name": "mariadb",
+  "version": "1.0.0",
+  "description": "simple app useing mariadb",
+  "homepage": "https://github.com/Emilyempa/MariaDB#readme",
+  "bugs": {
+    "url": "https://github.com/Emilyempa/MariaDB/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emilyempa/MariaDB.git"
+  },
+  "license": "ISC",
+  "author": "Emily",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  }
+}
