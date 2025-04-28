@@ -13,4 +13,21 @@ router.get("/:id", async function (req, res) {
   }
 });
 
+router.post("/register", async function (req, res) {
+  try {
+    const { email, password } = req.body;
+    console.log("Received data:", { email, password }); 
+    const sqlQuery = `INSERT INTO user (email, password) VALUES (?, ?)`;
+    const result = await pool.query(sqlQuery, [email, password]);
+    res.status(201).json({userId: result.insertId});
+  } catch (error) {
+    console.error("Database error:", error); 
+    if (error.code === "ER_DUP_ENTRY") {
+      res.status(409).json({ error: "Email already exists" });
+    } else {
+      res.status(500).json({ error: error.message }); 
+    }
+  }
+});
+
 export default router;
