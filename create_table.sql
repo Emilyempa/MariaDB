@@ -1,4 +1,4 @@
-CREATE TABLE testing.`user` (
+CREATE TABLE IF NOT EXISTS testing.`user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) DEFAULT NULL,
   `password` varchar(100) NOT NULL,
